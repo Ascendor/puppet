@@ -5,3 +5,11 @@ node 'loadbalancer' {
     docroot => '/var/www/html'
   }
 }
+node 'mysql' {
+  class { '::mysql::server':
+	root password => 'EinMannDerSichKolumbusNannt',
+	remove default accounts => true,
+	override_options => $override_options
+  }
+}
+
