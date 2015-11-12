@@ -2,7 +2,7 @@ node 'loadbalancer' {
   class { 'nginx':}
   nginx::resource::upstream { 'puppet_web':
     members => [
-      'node.puppet.local',
+      'webnode.puppet.local',
     ],
   }
 
@@ -13,7 +13,7 @@ node 'loadbalancer' {
 
 node 'webnode' {
   class { 'apache': }
-  apache::vhost { 'example.com':
+  apache::vhost { 'webnode.puppet.local':
     port => '80',
     docroot => '/var/www/html'
   }
