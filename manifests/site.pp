@@ -2,21 +2,16 @@ node 'loadbalancer' {
   class { 'nginx':}
   nginx::resource::upstream { 'puppet_web':
     members => [
-      'localhost:3000',
-      'localhost:3001',
-      'localhost:3002',
+      'node.puppet.local',
     ],
   }
 
   nginx::resource::vhost { 'www.puppet.local':
     proxy => 'http://puppet_web',
   }
-  package { 'apache2':
-    ensure => purged,
-  }
 }
 
-node 'node' {
+node 'webnode' {
   class { 'apache': }
   apache::vhost { 'example.com':
     port => '80',
