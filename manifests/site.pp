@@ -18,6 +18,14 @@ node 'webnode', 'webnode2' {
     port => '80',
     docroot => '/var/www/html'
   }
+  class { 'wordpress':
+    wp_owner    => 'root',
+    wp_group    => 'root',
+    db_host	=> 'mysql.puppet',
+    db_name	=> 'wordpress',
+    db_user     => 'wordpress',
+    db_password => 'EinMannDerSichKolumbusNannt',
+  }
 }
 
 node 'mysql' {
@@ -28,5 +36,9 @@ class { '::mysql::server':
   service_enabled	  => true,
   override_options        => $override_options
   }
+ mysql::db { 'wordpress':
+   user     => 'wordpress',
+   password => 'EinMannDerSichKolumbusNannt',
+}
 }
 
