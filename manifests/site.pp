@@ -25,6 +25,9 @@ node 'webnode', 'webnode2' {
     db_name	=> 'wordpress',
     db_user     => 'wordpress',
     db_password => 'EinMannDerSichKolumbusNannt',
+    create_db      => false,
+    create_db_user => false,
+    install_dir => '/var/www/wordpress',
   }
 }
 
