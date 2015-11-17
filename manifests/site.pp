@@ -32,7 +32,7 @@ node 'webnode', 'webnode2' {
   class { mysql::client: }
 }
 
-node 'mysql' {
+node 'mysql', 'database' {
 class { '::mysql::server':
   create_root_user 	  => true,
   root_password           => 'EinMannDerSichKolumbusNannt',
