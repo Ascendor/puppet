@@ -25,8 +25,8 @@ node 'webnode', 'webnode2' {
     db_name	=> 'wordpress',
     db_user     => 'wordpress',
     db_password => 'EinMannDerSichKolumbusNannt',
-    create_db      => false,
-    create_db_user => false,
+    create_db      => true,
+    create_db_user => true,
     install_dir => '/var/www/wordpress',
   }
   class { mysql::client: }
