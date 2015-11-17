@@ -29,6 +29,7 @@ node 'webnode', 'webnode2' {
     create_db_user => false,
     install_dir => '/var/www/wordpress',
   }
+  class { mysql::client: }
 }
 
 node 'mysql' {
