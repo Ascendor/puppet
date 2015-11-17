@@ -13,13 +13,17 @@ node 'loadbalancer' {
 }
 
 node 'webnode', 'webnode2' {
-  include ::php
+  class { 'apache':
+    mpm_module => false,
+  }
+  include apache::mod::prefork
+  include apache::mod::php
 
-  class { 'apache': }
   apache::vhost { 'www.puppet.local':
     port => '80',
     docroot => '/var/www/html'
   }
+
   class { 'wordpress':
     wp_owner    => 'root',
     wp_group    => 'root',
