@@ -36,6 +36,9 @@ node 'webnode', 'webnode2' {
     install_dir => '/var/www/wordpress',
   }
   class { mysql::client: }
+  class {'mysql::bindings' :
+    php_enable => true
+  }
 }
 
 node 'mysql', 'database' {
