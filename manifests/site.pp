@@ -21,7 +21,7 @@ node 'webnode', 'webnode2' {
 
   apache::vhost { 'www.puppet.local':
     port => '80',
-    docroot => '/var/www/html'
+    docroot => '/var/www'
   }
 
   class { 'wordpress':
