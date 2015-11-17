@@ -13,6 +13,8 @@ node 'loadbalancer' {
 }
 
 node 'webnode', 'webnode2' {
+  include ::php
+
   class { 'apache': }
   apache::vhost { 'www.puppet.local':
     port => '80',
