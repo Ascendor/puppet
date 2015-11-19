@@ -47,7 +47,9 @@ node 'mysql', 'database' {
     root_password           => 'EinMannDerSichKolumbusNannt',
     remove_default_accounts => true,
     service_enabled	  => true,
-    override_options        => $override_options
+    override_options => {
+        mysqld => { bind-address => '0.0.0.0'} #Allow remote connections
+      },
   }
   mysql::db { 'wordpress':
     user     => 'wordpress',
