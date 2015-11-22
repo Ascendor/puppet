@@ -46,7 +46,9 @@ node 'mysql', 'database' {
     create_root_user 	  => true,
     remove_default_accounts => true,
     service_enabled	  => true,
-    override_options        => $override_options
+    override_options => {
+        mysqld => { bind-address => '0.0.0.0'} #Allow remote connections
+      },
   }
 }
 
