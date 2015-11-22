@@ -1,0 +1,7 @@
+---
+apache::mpm_module: false
+apache::vhost::port: 80
+apache::vhost::docroot: /var/www
+classes:
+  - apache::mod::prefork
+  - apache::mod::php

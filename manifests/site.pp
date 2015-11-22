@@ -44,15 +44,9 @@ node 'webnode', 'webnode2' {
 node 'mysql', 'database' {
   class { '::mysql::server':
     create_root_user 	  => true,
-    root_password           => 'EinMannDerSichKolumbusNannt',
     remove_default_accounts => true,
     service_enabled	  => true,
     override_options        => $override_options
-  }
-  mysql::db { 'wordpress':
-    user     => 'wordpress',
-    password => 'EinMannDerSichKolumbusNannt',
-    host     => '%',
   }
 }
 
