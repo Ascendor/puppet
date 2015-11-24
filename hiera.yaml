@@ -1,7 +1,17 @@
 ---
 :backends:
   - yaml
+  - eyaml
+
 :yaml:
-  :datadir: "/etc/puppet/environments/%{environment}/hieradata"
+  :datadir: '/etc/puppet/environments/%{environment}/hieradata'
+
+:eyaml:
+  :datadir: '/etc/puppet/environments/%{environment}/hieradata'
+
+# If using the pkcs7 encryptor (default)
+  :pkcs7_private_key: /etc/puppet/secure/keys/private_key.pkcs7.pem
+  :pkcs7_public_key:  /etc/puppet/secure/keys/public_key.pkcs7.pem
+
 :hierarchy:
   - "node/%{::fqdn}"

@@ -1,7 +1,0 @@
----
-mysql::server::root_password: EinMannDerSichKolumbusNannt
-mysql::db::wordpress::user: wordpress
-mysql::db::wordpress::password: EinMannDerSichKolumbusNannt
-mysql::db::host::
-  -webnode.puppet.local
-  -webnode2.puppet.local
