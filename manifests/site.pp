@@ -13,31 +13,14 @@ node 'loadbalancer' {
 }
 
 node 'webnode', 'webnode2' {
-  class { 'apache':
-    mpm_module => false,
-  }
-  include apache::mod::prefork
-  include apache::mod::php
-
-  apache::vhost { 'www.puppet.local':
-    port => '80',
-    docroot => '/var/www'
-  }
-
-  class { 'wordpress':
-    wp_owner    => 'root',
-    wp_group    => 'root',
-    db_host	=> 'mysql.puppet',
-    db_name	=> 'wordpress',
-    db_user     => 'wordpress',
+  class {'webnode':
+    db_name => 'wordpress',
+    wp_owner => 'root',
+    wp_group => 'root',
+    db_host => 'mysql.puppet',
+    db_user => 'wordpress',
     db_password => 'EinMannDerSichKolumbusNannt',
-    create_db      => false,
-    create_db_user => false,
-    install_dir => '/var/www/wordpress',
-  }
-  class { mysql::client: }
-  class {'mysql::bindings' :
-    php_enable => true
+    install_dir => '/var/www/wordpress'
   }
 }
 
