@@ -1,0 +1,27 @@
+---
+mysql::server::root_password: >
+    ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAIZ4AMtiw+Rbok7uiRcmHW9vBSNgcuhYy+xu+
+    6I/WI6KsZkfjMb9C0d9NV8OFOftvUuZFz7Y0jitsvlOc0T26iVZlWS/nuB/Y
+    iL8fJV2jSY7iao6+25xnC/OTczHz57HTjB+fwbWHrsyd66gt9xxeul427ibh
+    m2rT4trE455pJDv77yg3EOr3NYnOyatb1TlBcg8UnhFpXCq2dGzPQnrY37Bv
+    /YioVoi2ZiVyinjP3JsjauQqBjQDWKl3OaTu/rxvZLRsBUn18e2CAXys7R9k
+    WGlTowwFceLvo4bZ/oxHOdVh93yvAadoRTkI5D5Bj4FpYxzsOLzFoy+hMWrI
+    eYEcvDBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAI+F6bHtKaFJZKUg68
+    XAV9gCBJW5izjZWV+0t2LIWOiLztV2rBku/QWB2PMQFbyDU45w==]
+
+mysql::db::wordpress::user: wordpress
+mysql::db::wordpress::password: >
+    ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAIZ4AMtiw+Rbok7uiRcmHW9vBSNgcuhYy+xu+
+    6I/WI6KsZkfjMb9C0d9NV8OFOftvUuZFz7Y0jitsvlOc0T26iVZlWS/nuB/Y
+    iL8fJV2jSY7iao6+25xnC/OTczHz57HTjB+fwbWHrsyd66gt9xxeul427ibh
+    m2rT4trE455pJDv77yg3EOr3NYnOyatb1TlBcg8UnhFpXCq2dGzPQnrY37Bv
+    /YioVoi2ZiVyinjP3JsjauQqBjQDWKl3OaTu/rxvZLRsBUn18e2CAXys7R9k
+    WGlTowwFceLvo4bZ/oxHOdVh93yvAadoRTkI5D5Bj4FpYxzsOLzFoy+hMWrI
+    eYEcvDBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAI+F6bHtKaFJZKUg68
+    XAV9gCBJW5izjZWV+0t2LIWOiLztV2rBku/QWB2PMQFbyDU45w==]
+
+mysql::db::host::
+  -webnode.puppet.local
+  -webnode2.puppet.local
