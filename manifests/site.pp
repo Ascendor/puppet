@@ -25,7 +25,6 @@ node 'webnode', 'webnode2' {
 }
 
 node 'mysql', 'database' {
-  include mysql::server
   class { '::mysql::server':
     create_root_user 	  => true,
     remove_default_accounts => true,
